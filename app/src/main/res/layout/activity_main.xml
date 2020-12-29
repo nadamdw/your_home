@@ -40,7 +40,7 @@
 
         android:background="@drawable/btn"
         android:paddingHorizontal="20dp"
-        android:text="sign in with google account" />
+        android:text="@string/dep" />
 
     <ImageView
         android:id="@+id/imageView2"

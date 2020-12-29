@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">yourHome</string>
+    <string name="app_name" translatable="false">yourHome</string>
+    <string name="dep">sign in with google account</string>
+    <string-array name="add">
+        <item>add your home</item>
+        <item>add your home</item>
+
+    </string-array>
 </resources>
