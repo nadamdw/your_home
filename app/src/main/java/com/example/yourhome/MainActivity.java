@@ -5,11 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -28,7 +31,10 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 public class MainActivity extends AppCompatActivity {
  Button btn;
- private static final int RC_SIGN_IN=1;
+ CheckBox remember;
+    SharedPreferences preferences=getSharedPreferences("checkbox",MODE_PRIVATE);
+
+    private static final int RC_SIGN_IN=1;
  private static final String TAG="GOOGLEAUTH";
  GoogleSignInClient mGoogleSignInClient;
  Dialog dialog;
@@ -53,6 +59,31 @@ public class MainActivity extends AppCompatActivity {
         // Getting the Button Click
 
        btn =(Button)findViewById(R.id.sign_in);
+       remember=findViewById(R.id.checkbox);
+       //remember account
+       remember.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+           @Override
+           public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+               if(compoundButton.isChecked()){
+                   SharedPreferences preferences=getSharedPreferences("checkbox",MODE_PRIVATE);
+                   SharedPreferences.Editor editor=preferences.edit();
+                   editor.putString("remember","true");
+                   editor.apply();
+                   Toast.makeText(MainActivity.this, "succes", Toast.LENGTH_SHORT).show();
+               }else if(!compoundButton.isChecked()){
+                   SharedPreferences preferences=getSharedPreferences("checkbox",MODE_PRIVATE);
+                   SharedPreferences.Editor editor=preferences.edit();
+                   editor.putString("remember","false");
+                   editor.apply();
+                   Toast.makeText(MainActivity.this, "error", Toast.LENGTH_SHORT).show();
+
+               }
+
+           }
+       });
+
+
+
 
 
         btn.setOnClickListener(new View.OnClickListener() {
