@@ -32,7 +32,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome"
+        android:text="bienvenue"
         android:textColor="#fafafa"
         android:textSize="25sp"
 
@@ -75,7 +75,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="add your Home"
+                        android:text="ajouter votre maison"
                         android:textAlignment="center"
                         />
 
@@ -104,7 +104,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="choose your Home"
+                        android:text="choisir un maison"
                         android:textAlignment="center"
                         />
 
@@ -118,8 +118,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:weightSum="2"
-            android:background="@drawable/header_bg">
+            >
+            <Button
+                android:id="@+id/log_out"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
+                android:background="@drawable/btn"
+                android:paddingHorizontal="20dp"
+                android:text=" déconnexion" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

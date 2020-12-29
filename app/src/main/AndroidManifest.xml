@@ -10,6 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".home_pageAct"></activity>
+        <activity android:name=".add_homeAct"></activity>
+
         <activity android:name=".MainActivity">
 
         <intent-filter>
