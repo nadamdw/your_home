@@ -66,8 +66,8 @@
                     android:gravity="center"
                     >
 
-                    <ImageView
-                        android:id="@+id/btn_add"
+                    <ImageButton
+                        android:id="@+id/img_add"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_baseline_add_24" />
