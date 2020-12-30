@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".home_pageAct"></activity>
         <activity android:name=".add_homeAct"></activity>
+        <activity android:name=".catalogueAct"></activity>
 
         <activity android:name=".MainActivity">
 

@@ -14,13 +14,15 @@ import com.google.firebase.auth.FirebaseAuth;
 public class home_pageAct extends AppCompatActivity {
     Button logout;
     FirebaseAuth mAuth;
-      ImageButton add ;
+      ImageButton add,btn_choisir ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
-       add = findViewById(R.id.img_add);
+        btn_choisir= findViewById(R.id.choisir);
+
+        add = findViewById(R.id.img_add);
         mAuth=FirebaseAuth.getInstance();
         logout=(Button)findViewById(R.id.log_out);
         logout.setOnClickListener(new View.OnClickListener() {
@@ -44,6 +46,18 @@ add.setOnClickListener(new View.OnClickListener() {
         finish();
     }
 });
+        btn_choisir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                choisir();
+
+            }
+            public void choisir(){
+                Intent i=new Intent(home_pageAct.this,catalogueAct.class);
+                startActivity(i);
+                finish();
+            }
+        });
+    }
     }
 
-}
